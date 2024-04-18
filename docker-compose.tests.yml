@@ -1,0 +1,8 @@
+services:
+  testdb:
+    image: postgres
+    restart: always
+    env_file:
+      - .env.test
+    ports:
+      - "5432:5432"

@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x", "rhel-openssl-1.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Player {
+  id                  String           @default(cuid()) @id
+  name                String
+  events              Participation[]
+}
+
+model Event {
+  id                  String           @default(cuid()) @id
+  location            String
+  court               Int
+  starts_at           DateTime
+  ends_at             DateTime
+  participants        Participation[]
+  createdAt           DateTime         @default(now())
+}
+
+model Participation {
+  player              Player           @relation(fields: [playerId], references: [id])
+  playerId            String
+  event               Event            @relation(fields: [eventId], references: [id])
+  eventId             String
+  registeredAt        DateTime         @default(now())
+
+  @@id([playerId, eventId])
+}

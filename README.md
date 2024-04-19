@@ -120,7 +120,8 @@ The file [.github/workflows/production-deployment.yaml](.github/workflows/produc
 - create you own Vercel account
 - Retrieve your Vercel Access Token
 - Install the Vercel CLI and run vercel login
-- Inside your folder, run vercel link to create a new Vercel project
-- Inside the generated .vercel folder, save the projectId and orgId from the project.json
-- Inside GitHub, add VERCEL_TOKEN, VERCEL_ORG_ID, and VERCEL_PROJECT_ID as secrets
+- In your folder, run vercel link to create a new Vercel project
+- In the generated .vercel folder, save the projectId and orgId from the project.json
+- In GitHub, add VERCEL_TOKEN, VERCEL_ORG_ID, and VERCEL_PROJECT_ID as secrets
 - In Vervel UI, Create a DB and connect it to your project.
+- In Vervel UI, Change build command to `prisma migrate deploy && next build`

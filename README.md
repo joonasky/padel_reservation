@@ -2,7 +2,7 @@
 
 ## Application
 
-With a simple padel ranking application you can create a Padel game event and people can register themselves to that game.
+With a simple padel reservation application you can create a Padel game event and people can register themselves to that game.
 
 ## Technology
 
@@ -41,6 +41,12 @@ Clone the repository and go to the padel_reservation folder. First install npm l
 
 ```
 npm install
+```
+
+To make the prisma client work, the client needs to be generated:
+
+```
+npm run generate
 ```
 
 ## Development
@@ -107,18 +113,14 @@ The file [.github/workflows/production-deployment.yaml](.github/workflows/produc
 
 - run-unit-tests
 - build-and-deploy-to-production
-- run-e2e-tests
-
-More information about the Vercel deployment and environment variables can be found [here](https://vercel.com/guides/how-can-i-use-github-actions-with-vercel).
 
 ### Your own deployment is done with these phases:
 
-- fork your own repo from the padel-ranking repository
+- fork your own repo from the padel_reservation repository
 - create you own Vercel account
-- add following secrets to your GitHub Actions:
-  - VERCEL_ORG_ID
-  - VERCEL_PROJECT_ID
-  - VERCEL_TOKEN
-  - DATABASE_URL (something like this `postgres://xxxxxx:yyyyyyyyyyyyyy@mahmud.db.elephantsql.com/zzzzzz`)
-- add following environment variable to you GitHub Actions:
-  - PLAYWRIGHT_TEST_BASE_URL (the URL where the application is running in the Vercel)
+- Retrieve your Vercel Access Token
+- Install the Vercel CLI and run vercel login
+- Inside your folder, run vercel link to create a new Vercel project
+- Inside the generated .vercel folder, save the projectId and orgId from the project.json
+- Inside GitHub, add VERCEL_TOKEN, VERCEL_ORG_ID, and VERCEL_PROJECT_ID as secrets
+- In Vervel UI, Create a DB and connect it to your project.

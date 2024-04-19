@@ -10,7 +10,7 @@
     "lint": "next lint",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
-    "test:setup": "docker-compose -f docker-compose.tests.yml up -d && dotenv -e .env.test -- npx prisma migrate deploy",
+    "test:setup": "docker-compose -f docker-compose.tests.yml up -d && sleep 3 && dotenv -e .env.test -- npx prisma migrate deploy",
     "test:e2e": "dotenv -e .env.test -- playwright test ./tests/e2e/",
     "test:teardown": "docker-compose -f docker-compose.tests.yml down",
     "test:unit": "jest"

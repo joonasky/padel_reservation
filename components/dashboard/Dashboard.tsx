@@ -89,7 +89,7 @@ const Dashboard = ({
   children,
   title,
 }: {
-  children: JSX.Element;
+  children: React.JSX.Element;
   title: string;
 }) => {
   const [open, setOpen] = React.useState(true);

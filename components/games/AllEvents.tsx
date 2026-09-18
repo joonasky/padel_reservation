@@ -12,17 +12,17 @@ const AllEvents = ({
 }) => {
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Paper sx={{ p: 2 }}>
           <Events events={pastEvents} futureOrPast={"Past"} />
         </Paper>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Paper sx={{ p: 2 }}>
           <Events events={futureEvents} futureOrPast={"Future"} />
         </Paper>
       </Grid>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <Button
           variant="outlined"
           onClick={() => {

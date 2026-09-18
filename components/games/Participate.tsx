@@ -38,7 +38,7 @@ const Participate = ({
   };
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Paper sx={{ p: 2 }}>
           <PlayerSelect
             players={players}
@@ -48,7 +48,7 @@ const Participate = ({
         {error && <Alert severity="error">You did not pick a player.</Alert>}
       </Grid>
 
-      <Grid item xs={6}>
+      <Grid size={6}>
         <Button
           variant="outlined"
           data-testid={"participateButton"}

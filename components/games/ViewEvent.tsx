@@ -43,7 +43,7 @@ export default function ViewEvent({
   };
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Card sx={{ minWidth: 275 }}>
           <CardContent>
             <Typography
@@ -76,12 +76,12 @@ export default function ViewEvent({
           </CardActions>
         </Card>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Card sx={{ minWidth: 275 }}>
           <PlayerList players={players} event={event}></PlayerList>
         </Card>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Button
           size="small"
           variant="outlined"

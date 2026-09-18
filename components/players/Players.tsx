@@ -7,12 +7,12 @@ import AddPlayer from "./AddPlayer";
 const Players = ({ players }: { players: Player[] }) => {
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Paper sx={{ p: 2 }}>
           <PlayerList players={players} />
         </Paper>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Paper sx={{ p: 2 }}>
           <AddPlayer />
         </Paper>

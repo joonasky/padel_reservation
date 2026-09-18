@@ -32,10 +32,10 @@ const AddPlayer = ({}: {}) => {
   return (
     <React.Fragment>
       <Grid container spacing={3}>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Title titleTestId="addPlayerTitle">Add player</Title>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <TextField
             required
             label="Name"
@@ -45,7 +45,7 @@ const AddPlayer = ({}: {}) => {
             data-testid="playerNameTextField"
           />
         </Grid>
-        <Grid item container xs={12} justifyContent="flex-end">
+        <Grid container size={12} sx={{ justifyContent: "flex-end" }}>
           <Button
             variant="contained"
             onClick={handleButtonClick}
